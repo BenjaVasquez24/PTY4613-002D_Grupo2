@@ -1,0 +1,40 @@
+﻿<Page x:Class="ProcessSA_Mahapps.Administracion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProcessSA_Mahapps"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Home">
+
+    <Grid>
+        <Grid x:Name="MainGrid" RenderTransformOrigin="1.119,0.455">
+            <Image HorizontalAlignment="Left" Height="73" Margin="22,20,0,0" VerticalAlignment="Top" Width="173" Source="Process SA Horizontal 300px.png"/>
+            <Label Content="Bienvenido/a" HorizontalAlignment="Left" Margin="631,10,0,0" VerticalAlignment="Top"/>
+            <Label Content="Administrador" HorizontalAlignment="Left" Margin="629,29,0,0" VerticalAlignment="Top" Foreground="#FF00DCFF"/>
+            <Image x:Name="imgLogo"  Margin="10,10,686,0" Height="58" Width="104"/>
+            <Button x:Name="BtnUsuarios" ToolTip="Usuarios" Margin="110,108,443,220" Height="Auto" Width="Auto" Click="BtnUsuarios_Click" >
+                <fa:ImageAwesome Icon="User" />
+            </Button>
+            <Button x:Name="BtnTareas"  ToolTip="Tareas" Margin="417,108,130,220" Height="Auto" Width="Auto" Click="BtnTareas_Click" >
+                <fa:ImageAwesome Icon="Tasks"/>
+            </Button>
+            <Button x:Name="BtnUnidades" ToolTip="Univades Internas" Margin="113,280,443,40" Height="Auto" Width="Auto" >
+                <fa:ImageAwesome Icon="List"/>
+            </Button>
+            <Button x:Name="btnFlujoTareas" ToolTip="Flujo de Tareas" Margin="417,280,130,40" Width="Auto" Height="Auto" >
+                <fa:ImageAwesome Icon="ThList"/>
+            </Button>
+            <!--<Button x:Name="BotonVentas"  ToolTip="Ventas" Margin="150,310,443,48" Height="Auto" Width="Auto" RenderTransformOrigin="-1.014,-0.315">
+
+            </Button>
+            <Button x:Name="BotonServicios"  ToolTip="Servicios" Margin="417,310,176,48" Width="Auto" Height="Auto">
+
+            </Button>-->
+            <TextBlock HorizontalAlignment="Left" Margin="261,27,0,0" TextWrapping="Wrap" Text="Menu Principal " VerticalAlignment="Top" Height="41" Width="256" FontSize="36" FontStretch="UltraExpanded" FontWeight="Bold" Foreground="#66dbe6"/>
+        </Grid>
+
+    </Grid>
+</Page>
