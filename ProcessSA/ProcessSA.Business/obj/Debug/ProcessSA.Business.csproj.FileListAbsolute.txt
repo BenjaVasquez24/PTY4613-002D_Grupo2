@@ -1,0 +1,15 @@
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\bin\Debug\ProcessSA.Business.exe.config
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\bin\Debug\ProcessSA.Business.exe
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\bin\Debug\ProcessSA.Business.pdb
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\obj\Debug\ProcessSA.Business.csproj.AssemblyReference.cache
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\obj\Debug\MainWindow.g.cs
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\obj\Debug\App.g.cs
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\obj\Debug\ProcessSA.Business_MarkupCompile.cache
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\obj\Debug\ProcessSA.Business_MarkupCompile.lref
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\obj\Debug\MainWindow.baml
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\obj\Debug\ProcessSA.Business.g.resources
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\obj\Debug\ProcessSA.Business.Properties.Resources.resources
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\obj\Debug\ProcessSA.Business.csproj.GenerateResource.cache
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\obj\Debug\ProcessSA.Business.csproj.CoreCompileInputs.cache
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\obj\Debug\ProcessSA.Business.exe
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\obj\Debug\ProcessSA.Business.pdb
