@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProcessSA.Business;
 
 
 namespace ProcessSA.Business
@@ -10,8 +11,8 @@ namespace ProcessSA.Business
     public class Usuarios
     {
         public string RutUsuarios { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        public string Nombres { get; set; }
+        public string Apellidos { get; set; }
         public string NombreUsuario{ get; set; }
         public string Contraseña { get; set; }
         public string Rol { get; set; }
@@ -26,19 +27,19 @@ namespace ProcessSA.Business
         private void Init()
         {
             RutUsuarios = string.Empty;
-            Nombre = string.Empty;
+            Nombres = string.Empty;
+            Apellidos = string.Empty;
             NombreUsuario = string.Empty;
             Contraseña = string.Empty;
-            Apellido = string.Empty;
             Rol = string.Empty;
             Email = string.Empty;
             Teléfono = string.Empty;
         }
 
-        public bool Create()
-        {
-            return false;
-        }
+        //public bool Create()
+        //{
+        //    return false;
+        //}
 
         //public bool Read()
         //{
@@ -97,8 +98,8 @@ namespace ProcessSA.Business
         public bool ComprobarDatos()
         {
             if (RutUsuarios == string.Empty ||
-            Nombre == string.Empty ||
-            Apellido == string.Empty ||
+            Nombres == string.Empty ||
+            Apellidos == string.Empty ||
             NombreUsuario == string.Empty ||
             Contraseña == string.Empty ||
             Rol == string.Empty ||

@@ -6,9 +6,84 @@
       xmlns:local="clr-namespace:ProcessSA.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Tareas">
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+      Title="ventTareas" Width="auto" Height="600"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal" 
+      TextOptions.TextRenderingMode="Auto"        
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}">
 
-    <Grid>
-        
+    <Grid Width="auto" Height="auto" VerticalAlignment="Stretch" HorizontalAlignment ="Stretch" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="158*"/>
+                <ColumnDefinition Width="138*"/>
+                <ColumnDefinition Width="237*"/>
+                <ColumnDefinition Width="138*"/>
+                <ColumnDefinition Width="129*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0*"/>
+                <RowDefinition Height="240*"/>
+                <RowDefinition Height="67*"/>
+                <RowDefinition Height="104*"/>
+            </Grid.RowDefinitions>
+            <Grid Margin="23,12,18,26" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140*"/>
+                    <ColumnDefinition Width="183*"/>
+                    <ColumnDefinition Width="169*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="69*"/>
+                    <RowDefinition Height="69*"/>
+                    <RowDefinition Height="69*"/>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="txtNombreTarea" materialDesign:HintAssist.Hint="Nombre Tarea" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="18,10,13,13" FontSize="15" Grid.Column="0" Grid.Row="0"/>
+                <ComboBox x:Name="cboRolTarea" materialDesign:HintAssist.Hint="Rol" MinWidth="72" Margin="18,10,13,13" Style="{StaticResource MaterialDesignFloatingHintComboBox}" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="1" FontSize="15"/>
+                <ComboBox x:Name="cboResponsableTarea" materialDesign:HintAssist.Hint="Responsable" MinWidth="72" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="18,10,13,13" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="2" FontSize="15"/>
+                <DatePicker x:Name="dpFechaInicio" materialDesign:HintAssist.Hint="Fecha Inicio" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Grid.Column="0" Grid.Row="1" VerticalAlignment="Stretch" FontSize="15" Margin="18,10,13,13"/>
+                <materialDesign:TimePicker Margin="18,10,13,13" Is24Hours="True" x:Name="HoraInicio" materialDesign:HintAssist.Hint="Hora Inicio" Style="{StaticResource MaterialDesignFloatingHintTimePicker}" FontSize="15" Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch"/>
+                <DatePicker x:Name="dpFechaFin" materialDesign:HintAssist.Hint="Fecha Finalización" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Grid.Column="0" Grid.Row="2" VerticalAlignment="Stretch" FontSize="15" Margin="18,10,13,13"/>
+                <materialDesign:TimePicker Margin="18,10,13,13" Is24Hours="True" x:Name="HoraFin" materialDesign:HintAssist.Hint="Hora Fin" Style="{StaticResource MaterialDesignFloatingHintTimePicker}" FontSize="15" Grid.Column="1" Grid.Row="2" VerticalAlignment="Stretch"/>
+                <TextBox x:Name="txtObservaciones" materialDesign:HintAssist.Hint="Observaciones" MaxLines="300" MaxLength="250" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsEnabled="{Binding IsChecked, ElementName=MaterialDesignOutlinedTextFieldTextBoxEnabledComboBox}" Margin="18,10,13,13" FontSize="15" Grid.RowSpan="2" Grid.Column="2" Grid.Row="1" />
+            </Grid>
+            
+            <!--Datagrid con datos de tareas-->
+            <DataGrid ItemsSource="{Binding Source=tareas}" CanUserSortColumns="False" CanUserAddRows="False" Margin="13,33,17,27" MaxHeight="400"
+                x:Name="gdTareas" AutoGenerateColumns="False" CanUserResizeColumns="False" IsReadOnly="True" Grid.ColumnSpan="3" CanUserReorderColumns="False" HeadersVisibility="Column" Grid.Row="1">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="  Nombre Tarea  " Binding="{Binding NombreTarea}" />
+                    <DataGridTextColumn Header="  Encargado  " Binding="{Binding EncargadoTarea}" />
+                    <DataGridTextColumn Header="  Fecha Inicio  " Binding="{Binding FechaInicio}"/>
+                    <DataGridTextColumn Header="  Hora Inicio  " Binding="{Binding HRInicio}"/>
+                    <DataGridTextColumn Header="  Fecha Fin  " Binding="{Binding FechaFin}"/>
+                    <DataGridTextColumn Header="  Hora Fin  " Binding="{Binding HoraFin}" />
+                    <DataGridTextColumn Header="  Observaciones  " Binding="{Binding  MailContacto}" />
+                </DataGrid.Columns>
+            </DataGrid>
+            
+            <!--Botones Agregar/Actualizar/Modificar/Eliminar Tareas-->
+            <Button x:Name="btnAgregarTarea" Style="{StaticResource MaterialDesignRaisedButton}" Grid.Column="3" Margin="14,20,15,18" ToolTip="Nueva Tarea" Grid.Row="2" Height="Auto" >
+                <materialDesign:PackIcon Kind="UserPlusOutline"  Height="41" Width="41" />
+            </Button>
+            <Button x:Name="btnActualizarTarea" Style="{StaticResource MaterialDesignRaisedButton}" Margin="13,19,7,19" ToolTip="Actualizar Tarea" Grid.Row="2" Height="Auto" Grid.Column="4">
+                <materialDesign:PackIcon Kind="Sync"  Height="43" Width="39" />
+            </Button>
+            <Button x:Name="btnBuscarTarea" Style="{StaticResource MaterialDesignRaisedButton}" Margin="15,45,14,43" ToolTip="Buscar Tarea" Grid.Row="3" Height="Auto" Grid.Column="3" >
+                <materialDesign:PackIcon Kind="Search"  Height="51" Width="46"/>
+            </Button>
+            <Button x:Name="btnEliminarTarea" Style="{StaticResource MaterialDesignRaisedButton}" Margin="13,46,7,42" ToolTip="Borrar Tarea" Grid.Row="3" Height="Auto" Grid.Column="4" >
+                <materialDesign:PackIcon Kind="Delete"  Height="41" Width="41" BorderBrush="Black" />
+            </Button>
+        </Grid>
     </Grid>
 </Page>

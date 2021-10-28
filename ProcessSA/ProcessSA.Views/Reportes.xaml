@@ -4,11 +4,59 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProcessSA.Views"
-      mc:Ignorable="d" 
+       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Reportes">
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+      Title="ventReportes" Width="auto" Height="600"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal" 
+      TextOptions.TextRenderingMode="Auto"        
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}">
 
-    <Grid>
-        
+    <Grid Width="auto" Height="auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90*"/>
+                <ColumnDefinition Width="120*"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="20*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="500*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnReporteExcel" Style="{StaticResource MaterialDesignRaisedButton}" Grid.Column="2" Grid.Row="1" Margin="14,60,15,18" ToolTip="Reporte en Excel"  Height="100" VerticalAlignment="Top">
+                <materialDesign:PackIcon Kind="FileExcel"  Height="50" Width="50" />
+            </Button>
+            <Button x:Name="btnReportePDF" Style="{StaticResource MaterialDesignRaisedButton}" Grid.Column="2" Grid.Row="1" Margin="14,20,15,18" ToolTip="Reporte en PDF" Height="100" >
+                <materialDesign:PackIcon Kind="FilePdf"  Height="50" Width="50" />
+            </Button>
+            <Grid Grid.Row="1" Grid.Column="0" Margin="60,60,60,0" IsEnabled="False">
+                <StackPanel Grid.Row="1" Grid.Column="1">
+                    <Label Content="El reporte diario tendrá la siguiente información: " FontSize="15"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="1" IsEnabled="False" Margin="60,60,60,0">
+                <Label Content="- Cantidad de Tareas realizadas durante el día." FontSize="15"/>
+                <Label Content="- Cantidad de Tareas atrasadas." Margin="0,40,0,0" FontSize="15"/>
+                <Label Content="- Cantidad de Tareas asignadas y responsable." Margin="0,80,0,0" FontSize="15"/>
+                <Label Content="- Cantidad de días de atraso de tareas asignadas." Margin="0,120,0,0" FontSize="15"/>
+                <Label Content="- Cantidad de días de atraso de tareas asignadas." Margin="0,160,0,0" FontSize="15"/>
+                <Label Content="- Cantidad de días de atraso de tareas asignadas." Margin="0,200,0,0" FontSize="15"/>
+                <Label Content="- Cantidad de días de atraso de tareas asignadas." Margin="0,240,0,0" FontSize="15"/>
+                <Label Content="- Cantidad de días de atraso de tareas asignadas." Margin="0,280,0,0" FontSize="15"/>
+                <Label Content="- Cantidad de días de atraso de tareas asignadas." Margin="0,320,0,0" FontSize="15"/>
+                
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

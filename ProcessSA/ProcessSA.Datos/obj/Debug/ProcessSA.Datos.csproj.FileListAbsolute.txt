@@ -1,0 +1,6 @@
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Datos\bin\Debug\ProcessSA.Datos.dll
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Datos\bin\Debug\ProcessSA.Datos.pdb
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Datos\obj\Debug\ProcessSA.Datos.csproj.AssemblyReference.cache
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Datos\obj\Debug\ProcessSA.Datos.csproj.CoreCompileInputs.cache
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Datos\obj\Debug\ProcessSA.Datos.dll
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Datos\obj\Debug\ProcessSA.Datos.pdb

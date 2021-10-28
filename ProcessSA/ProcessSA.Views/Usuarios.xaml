@@ -85,8 +85,8 @@
             </Button>
             <TextBox x:Name="txtFiltroNombre" Grid.Column="0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" materialDesign:HintAssist.Hint="Filtro Nombre"  Height="27" Margin="27,8,11,0"/>
             <ComboBox materialDesign:HintAssist.Hint="Filtro Rol" x:Name="cboFiltroRol" Margin="10,8,11,0" VerticalAlignment="Top" Height="27" Grid.Column="1" FontSize="15" />
-            <TextBox x:Name="txtFiltroRut" Grid.Column="2" HorizontalAlignment="Left" Height="27" Margin="10,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" materialDesign:HintAssist.Hint="Filtro Rut" FontSize="15" TextChanged="txtFiltroRut_TextChanged" />
-            <Button x:Name="LimpiarFiltro" Style="{StaticResource MaterialDesignRaisedButton}" Grid.Column="2" Margin="180,3,6,9" ToolTip="Limpiar Filtros" Height="Auto">
+            <TextBox x:Name="txtFiltroRut" Grid.Column="2" HorizontalAlignment="Left" Height="27" Margin="10,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" materialDesign:HintAssist.Hint="Filtro Rut" FontSize="15"/>
+            <Button x:Name="LimpiarFiltro" Style="{StaticResource MaterialDesignRaisedButton}" Grid.Column="2" Margin="180,3,6,9" ToolTip="Limpiar Filtros" Height="Auto" Click="LimpiarFiltro_Click">
                 <materialDesign:PackIcon Kind="Restore"  Height="29" Width="22" HorizontalAlignment="Right" />
             </Button>
         </Grid>
