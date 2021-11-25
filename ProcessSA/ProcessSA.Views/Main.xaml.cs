@@ -35,7 +35,7 @@ namespace ProcessSA.Views
             ventUsuarios.ControladorUsuarios = this;
             ventTareas.ControladorTareas = this;
             login.ControladorLogin = this;
-            Principal.NavigationService.Navigate(login);
+            Principal.NavigationService.Navigate(ventUsuarios);
             Titulo.Text = "";
             _shutdown = false;
             Volver.Visibility = Visibility.Hidden;

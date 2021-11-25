@@ -28,3 +28,8 @@ C:\Users\Benja\Documents\GitHub\PTY4613-002D_Grupo2\ProcessSA\ProcessSA.Business
 C:\Users\Benja\Documents\GitHub\PTY4613-002D_Grupo2\ProcessSA\ProcessSA.Business\obj\Debug\ProcessSA.Business.csproj.CoreCompileInputs.cache
 C:\Users\Benja\Documents\GitHub\PTY4613-002D_Grupo2\ProcessSA\ProcessSA.Business\obj\Debug\ProcessSA.Business.exe
 C:\Users\Benja\Documents\GitHub\PTY4613-002D_Grupo2\ProcessSA\ProcessSA.Business\obj\Debug\ProcessSA.Business.pdb
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\bin\Debug\ProcessSA.Data.dll
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\bin\Debug\ProcessSA.Data.pdb
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\bin\Debug\ProcessSA.Data.dll.config
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\obj\Debug\ProcessSA.Business.csproj.CopyComplete
+C:\Users\Benja\source\repos\ProcessSA\ProcessSA.Business\bin\Debug\EntityFramework.xml

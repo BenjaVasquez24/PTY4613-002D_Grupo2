@@ -15,7 +15,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ProcessSA.Business;
 using System.Data.OracleClient;
-using System.Data.SqlClient;
 
 
 namespace ProcessSA.Views
@@ -25,7 +24,7 @@ namespace ProcessSA.Views
     /// </summary>
     public partial class Usuarios : Page
     {
-        OracleConnection ora = new OracleConnection("DATA SOURCE = orcl; password= 123; user id = test;");
+        OracleConnection ora = new OracleConnection("DATA SOURCE = orcl; password= pty4163; user id = PTY4163;");
         public Main ControladorUsuarios;
 
         List<Usuarios> listausuarios = new List<Usuarios>();
@@ -34,6 +33,7 @@ namespace ProcessSA.Views
         {
             InitializeComponent();
             CargarGridUsuarios();
+            CargarCombobox();
         }
 
         public void LimpiarControles()
@@ -54,7 +54,6 @@ namespace ProcessSA.Views
             gdUsuarios.ItemsSource = listausuarios;
             gdUsuarios.Items.Refresh();
 
-
             //Usuarios usuarios = new Usuarios();
             ////gdUsuarios.ItemsSource = usuarios.ReadAll();
 
@@ -64,19 +63,36 @@ namespace ProcessSA.Views
             //DataTable tabla = new DataTable();
             //adaptador.Fill(tabla);
             //gdUsuarios.DataSource = tabla;
+        }       
+
+        public void CargarCombobox()
+        {
+            //OracleCommand comando = new OracleCommand("SELECT Descripcion from ROL", ora);
+            //ora.Open();
+            //OracleDataReader registro = new comando.ExecuteReader();
+            //while(registro.Read())
+            //{ 
+            //    cboRol.Items.Add(registro["Descripcion"].ToString());
+            //}
+            //ora.Close();
+
+            //TipoRol empresas = new TipoRol();
+            //cboRol.ItemsSource = empresas.ReadAllTipoRol();
+            //cboRol.DisplayMemberPath = "Descripcion_rol";
+            //cboRol.SelectedValuePath = "ID_Rol";
+            //cboRol.SelectedIndex = 0;
         }
 
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
             Usuarios usuarios = new Usuarios();
 
-            usuarios.txtRut.Text = txtRut.Text;
-            usuarios.txtNombre.Text = txtNombre.Text;
-            usuarios.txtApellido.Text = txtApellido.Text;
-            usuarios.txtNombreUsuario.Text = txtNombreUsuario.Text;
-            usuarios.txtContraseña.Text = txtContraseña.Text;
-            //usuarios.cboRol.SelectedItem=
-            listausuarios.Add(usuarios);
+            //RutUsuarios = txtRut.Text;
+            //usuarios.txtNombre.Text = txtNombre.Text;
+            //usuarios.txtApellido.Text = txtApellido.Text;
+            //usuarios.txtNombreUsuario.Text = txtNombreUsuario.Text;
+            //usuarios.txtContraseña.Text = txtContraseña.Text;
+            //listausuarios.Add(usuarios);
 
             CargarGridUsuarios();
             LimpiarControles();

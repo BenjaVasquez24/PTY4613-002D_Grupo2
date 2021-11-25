@@ -32,7 +32,7 @@ namespace ProcessSA.Views
         }
 
         //Conectar con base de datos
-        OracleConnection ora = new OracleConnection("DATA SOURCE = orcl; password= 123; user id= test;");
+        OracleConnection ora = new OracleConnection("DATA SOURCE = orcl; password= pty4163; user id= pty4163;");
 
         private void IniciarSesion_Click(object sender, RoutedEventArgs e)
         {
@@ -60,7 +60,6 @@ namespace ProcessSA.Views
                 Dialogos.BasicDialog("Error", "Verifique sus credenciales e intente nuevamente.");
                 //Se cierra la conexión a base de datos.
                 ora.Close();
-                
             }
         }
     }
