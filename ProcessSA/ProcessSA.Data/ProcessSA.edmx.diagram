@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7978fcfe8105408992c72d503b8d773d" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.FLUJO" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.JERARQUIA" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ROL" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TAREA" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TAREAS_TIPO" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UNIDAD" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USUARIOS" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="Model.TAREAS_TIPO_FLUJO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.JERARQUIA_UNIDAD_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.USUARIOS_JERARQUIA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.USUARIOS_ROL_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TAREA_TAREAS_TIPO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TAREA_USUARIOS_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

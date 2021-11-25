@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="FLUJO">
+    <Key>
+      <PropertyRef Name="ID_FLUJO" />
+    </Key>
+    <Property Name="ID_FLUJO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TAREAS_TIPO" Relationship="Self.TAREAS_TIPO_FLUJO_FK" FromRole="FLUJO" ToRole="TAREAS_TIPO" />
+  </EntityType>
+  <EntityType Name="JERARQUIA">
+    <Key>
+      <PropertyRef Name="ID_JERARQUIA" />
+    </Key>
+    <Property Name="ID_JERARQUIA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="UNIDAD_ID_UNIDAD" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <NavigationProperty Name="UNIDAD" Relationship="Self.JERARQUIA_UNIDAD_FK" FromRole="JERARQUIA" ToRole="UNIDAD" />
+    <NavigationProperty Name="USUARIOS" Relationship="Self.USUARIOS_JERARQUIA_FK" FromRole="JERARQUIA" ToRole="USUARIOS" />
+  </EntityType>
+  <EntityType Name="ROL">
+    <Key>
+      <PropertyRef Name="ID_ROL" />
+    </Key>
+    <Property Name="ID_ROL" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DESCRIPCION_ROL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="USUARIOS" Relationship="Self.USUARIOS_ROL_FK" FromRole="ROL" ToRole="USUARIOS" />
+  </EntityType>
+  <EntityType Name="TAREA">
+    <Key>
+      <PropertyRef Name="ID_TAREA" />
+    </Key>
+    <Property Name="ID_TAREA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="FECHA_PLAZO" Type="DateTime" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="FECHA_TERMINO" Type="DateTime" Nullable="false" />
+    <Property Name="ESTADO_AVANCE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_RESPONSABLE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_TAREA_DEPENDENCIA" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="JUSTIFICACION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="REPORTE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TAREAS_TIPO_ID_TAREAS_TIPO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="USUARIOS_NOMBRE_USUARIO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TAREAS_TIPO" Relationship="Self.TAREA_TAREAS_TIPO_FK" FromRole="TAREA" ToRole="TAREAS_TIPO" />
+    <NavigationProperty Name="USUARIOS" Relationship="Self.TAREA_USUARIOS_FK" FromRole="TAREA" ToRole="USUARIOS" />
+  </EntityType>
+  <EntityType Name="TAREAS_TIPO">
+    <Key>
+      <PropertyRef Name="ID_TAREAS_TIPO" />
+    </Key>
+    <Property Name="ID_TAREAS_TIPO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ESTADO_TAREA_TIPO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FLUJO_ID_FLUJO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <NavigationProperty Name="FLUJO" Relationship="Self.TAREAS_TIPO_FLUJO_FK" FromRole="TAREAS_TIPO" ToRole="FLUJO" />
+    <NavigationProperty Name="TAREA" Relationship="Self.TAREA_TAREAS_TIPO_FK" FromRole="TAREAS_TIPO" ToRole="TAREA" />
+  </EntityType>
+  <EntityType Name="UNIDAD">
+    <Key>
+      <PropertyRef Name="ID_UNIDAD" />
+    </Key>
+    <Property Name="ID_UNIDAD" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="JERARQUIA" Relationship="Self.JERARQUIA_UNIDAD_FK" FromRole="UNIDAD" ToRole="JERARQUIA" />
+  </EntityType>
+  <EntityType Name="USUARIOS">
+    <Key>
+      <PropertyRef Name="NOMBRE_USUARIO" />
+    </Key>
+    <Property Name="RUT" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APELLIDO_P" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOMBRE_USUARIO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CONTRASENA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ROL_ID_ROL" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="JERARQUIA_ID_JERARQUIA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <NavigationProperty Name="JERARQUIA" Relationship="Self.USUARIOS_JERARQUIA_FK" FromRole="USUARIOS" ToRole="JERARQUIA" />
+    <NavigationProperty Name="ROL" Relationship="Self.USUARIOS_ROL_FK" FromRole="USUARIOS" ToRole="ROL" />
+    <NavigationProperty Name="TAREA" Relationship="Self.TAREA_USUARIOS_FK" FromRole="USUARIOS" ToRole="TAREA" />
+  </EntityType>
+  <Association Name="TAREAS_TIPO_FLUJO_FK">
+    <End Role="FLUJO" Type="Self.FLUJO" Multiplicity="1" />
+    <End Role="TAREAS_TIPO" Type="Self.TAREAS_TIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FLUJO">
+        <PropertyRef Name="ID_FLUJO" />
+      </Principal>
+      <Dependent Role="TAREAS_TIPO">
+        <PropertyRef Name="FLUJO_ID_FLUJO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JERARQUIA_UNIDAD_FK">
+    <End Role="UNIDAD" Type="Self.UNIDAD" Multiplicity="1" />
+    <End Role="JERARQUIA" Type="Self.JERARQUIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UNIDAD">
+        <PropertyRef Name="ID_UNIDAD" />
+      </Principal>
+      <Dependent Role="JERARQUIA">
+        <PropertyRef Name="UNIDAD_ID_UNIDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="USUARIOS_JERARQUIA_FK">
+    <End Role="JERARQUIA" Type="Self.JERARQUIA" Multiplicity="1" />
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JERARQUIA">
+        <PropertyRef Name="ID_JERARQUIA" />
+      </Principal>
+      <Dependent Role="USUARIOS">
+        <PropertyRef Name="JERARQUIA_ID_JERARQUIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="USUARIOS_ROL_FK">
+    <End Role="ROL" Type="Self.ROL" Multiplicity="1" />
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROL">
+        <PropertyRef Name="ID_ROL" />
+      </Principal>
+      <Dependent Role="USUARIOS">
+        <PropertyRef Name="ROL_ID_ROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TAREA_TAREAS_TIPO_FK">
+    <End Role="TAREAS_TIPO" Type="Self.TAREAS_TIPO" Multiplicity="1" />
+    <End Role="TAREA" Type="Self.TAREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAREAS_TIPO">
+        <PropertyRef Name="ID_TAREAS_TIPO" />
+      </Principal>
+      <Dependent Role="TAREA">
+        <PropertyRef Name="TAREAS_TIPO_ID_TAREAS_TIPO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TAREA_USUARIOS_FK">
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+    <End Role="TAREA" Type="Self.TAREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="NOMBRE_USUARIO" />
+      </Principal>
+      <Dependent Role="TAREA">
+        <PropertyRef Name="USUARIOS_NOMBRE_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProcessSAEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FLUJO" EntityType="Self.FLUJO" />
+    <EntitySet Name="JERARQUIA" EntityType="Self.JERARQUIA" />
+    <EntitySet Name="ROL" EntityType="Self.ROL" />
+    <EntitySet Name="TAREA" EntityType="Self.TAREA" />
+    <EntitySet Name="TAREAS_TIPO" EntityType="Self.TAREAS_TIPO" />
+    <EntitySet Name="UNIDAD" EntityType="Self.UNIDAD" />
+    <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" />
+    <AssociationSet Name="TAREAS_TIPO_FLUJO_FK" Association="Self.TAREAS_TIPO_FLUJO_FK">
+      <End Role="FLUJO" EntitySet="FLUJO" />
+      <End Role="TAREAS_TIPO" EntitySet="TAREAS_TIPO" />
+    </AssociationSet>
+    <AssociationSet Name="JERARQUIA_UNIDAD_FK" Association="Self.JERARQUIA_UNIDAD_FK">
+      <End Role="UNIDAD" EntitySet="UNIDAD" />
+      <End Role="JERARQUIA" EntitySet="JERARQUIA" />
+    </AssociationSet>
+    <AssociationSet Name="USUARIOS_JERARQUIA_FK" Association="Self.USUARIOS_JERARQUIA_FK">
+      <End Role="JERARQUIA" EntitySet="JERARQUIA" />
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+    </AssociationSet>
+    <AssociationSet Name="USUARIOS_ROL_FK" Association="Self.USUARIOS_ROL_FK">
+      <End Role="ROL" EntitySet="ROL" />
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+    </AssociationSet>
+    <AssociationSet Name="TAREA_TAREAS_TIPO_FK" Association="Self.TAREA_TAREAS_TIPO_FK">
+      <End Role="TAREAS_TIPO" EntitySet="TAREAS_TIPO" />
+      <End Role="TAREA" EntitySet="TAREA" />
+    </AssociationSet>
+    <AssociationSet Name="TAREA_USUARIOS_FK" Association="Self.TAREA_USUARIOS_FK">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="TAREA" EntitySet="TAREA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
